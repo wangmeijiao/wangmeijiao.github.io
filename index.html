@@ -1,41 +1,513 @@
+
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Meijiao Wang PhD, wangmeijiao@ioz.ac.cn</title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-	</head>
 
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/research_interest.pdf">Research interest</a></li>
-        		<li><a href="/cv.pdf">CV</a></li>
-			    <li><a href="/publications.pdf">Publication</a></li>
-			    <li><a href="/about_me.pdf">About me</a></li>
-    		</ul>
-		</nav>
-		
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Meijiao!</h1>
-			<p>How are you, nice guy! <em>Good day! Good day!</em> <a href="/about">Read more about me...</a></p>
-			<p>This is line 1</p>
-                        <p>This is line 2</p>
-                        <p>This is line 3</p>
-                        <p>This is line 4</p>
-                        <p>This is line 5</p>
-                        <p>This is line 6</p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		
-		<footer>
-    		<ul>
-        		<li><a href="mailto:wangmeijiao@ioz.ac.cn">email</a></li>
-        		<li><a href="https://github.com/wangmeijiao">github.com/wangmeijiao</a></li>
-			</ul>
-		</footer>
-		
-	</body>
+<head>
+
+<title>main_grid.html-Personal website, meijiao PhD</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 1px auto;
+            width: 90%;
+        }
+
+
+        p.auto-width-paragraph {
+            width: 100%;
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            text-align: justify;
+
+            font-family: 'Arial', sans-serif;
+            font-size: medium;
+            
+
+        }
+
+        p.fixed-width-paragraph {
+            width: 1200px;
+            word-wrap: break-word
+
+        }
+
+        /* Create three equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 33%;
+            padding: 10px;
+            height:auto;
+            display:block;
+            text-align: center;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        div.imgtext {
+            display: flex;
+            align-items: center;
+
+
+        }
+
+        img {
+            margin-right: 10px;
+            margin-left:5px
+
+        }
+
+        div.desc {
+            padding: 1px;
+            text-align: justify;
+            font-size: .8em
+        }
+
+
+        nav ul, footer ul {
+            font-family:'Helvetica', 'Arial', 'Sans-Serif';
+            padding: 0px;
+            list-style: none;
+            font-weight: bold;
+        }
+
+        nav ul li, footer ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #999;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: center;
+            margin: auto;
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 75%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: rgb(21, 20, 20);
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 10%;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .text {font-size: 11px}
+        }
+
+
+
+    </style>
+
+
+    <!-- link to main ccs stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/main_grid.css">
+
+
+</head>
+
+
+<body>
+
+    <!--navigation header-->
+    <nav>
+        <!--is a unordered list-->
+        <ul>
+            <li><a href="#introduction">Home</a></li>
+            <li><a href="#research_interest">Research interest</a></li>
+            <li><a href="/cv.pdf">CV</a></li>
+            <li><a href="#selected_pub">Publication</a></li>
+            <li><a href="#aboutme">About me</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 id="introduction"> Meijiao Wang PhD.</h1>
+
+    <p style="font-family:Arial,sans-serif;text-align: justify;text-indent: 2ch;"> Hi, welcome to my personal web site! I was born on 1984 in Hunan Province, 
+        which locates at the middle south part of the mainland China. Since 2010 I started my PhD training in the institution of Genetics and Biological Developmental Genetics (bioinformatics direction),and complete 
+        the PhD degree in genetics (bioinformatics direction), continuing my Post Doc training in (epigentical) gene expression regulatory in Reproduction (embryo and placenta) 
+        I devoted myself as a computational biologist with more than fourteen years experience in the fields of comparative genomics, epigenetics, single cell/nucleus sequenencing. 
+    
+        I am good at cooperation with biologist and eager to handle standalone project (both story driven and methodology driven).
+    </p>
+    
+
+    <h2>Selected figures from published papers</h2>
+    
+    <div class="slideshow-container">
+    
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="image/STB-eGRN-1800x704x144dpi.jpg" style="width:100%">
+            <div class="text">Caption one</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 5</div>
+            <img src="image/STB-markergene_track-1800x704x144dpi.jpg" style="width:100%">
+            <div class="text">Caption two</div>
+        </div>
+        
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 5</div>
+            <img src="image/STB-analysis-workflow-1800x704x144dpi.jpg" style="width:100%">
+            <div class="text">Caption three</div>
+        </div>
+        
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 5</div>
+            <img src="image/STB-summary-model-1800x704x144dpi.jpg" style="width:100%">
+            <div class="text">Caption four</div>
+        </div>
+
+
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 5</div>
+            <img src="image/Cnot8-DEG-1800x704x144dpi.jpg" style="width:100%">
+            <div class="text">Caption five</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+
+    <br>
+    
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(4)"></span> 
+        <span class="dot" onclick="currentSlide(5)"></span> 
+    </div>
+
+
+
+    <br>
+    <hr>
+    
+
+    <h2 id="research_interest"> <u> Research interest </u></h2>
+
+    <p> Based on emphasis of bioinformatic methodology (both wet and dry), I mainly devote myself on the following research aspects: </p>
+    <p><i>Biology story driven:</i></p>
+    <p> (1) Reproduction Biology. Extraembrionic (placenta) and embryoinic cell lineage commitment; 
+        (2) Cardic development. Cardic lineage development and gene regulation in mammalian heart. Abnormal gene regulation during heart disease;
+        (3) Neurology development. Neurologic tissue lineage commitment and gene regulation. </p>
+    
+    <p><i>Methodology driven:</i></p>
+    <p> (1) Single cell/nucleus multiomic sequencing. scRNA-seq, snRNA+snATAC sequencing, scRNA-seq + CITE-seq ...; 
+        (2) Spatial single cell sequencing. Sequencing-based: Steroseq (BGI), Visum (10X), probe-based: MERFISH ...;
+        (3) Single cell/nucleus multiomic-based gene regulation network construction.
+    </p>
+    
+
+
+    <h2 id="selected_pub"><u> <span style="color:rgb(128,34,28);font-family:Helvetica Neue,Helvetica,Arial,sans-serif">Selected publications</span>  </u> (# first/co-first author, * corresponding author) </h2>
+
+
+    <p class="auto-width-paragraph">
+        1. <b>Wang M#</b>, Liu Y#, Sun R#, Liu F#, Li J, Yan L, Zhang J, Xie X, Li D, Wang Y, Li S, Zhu X, Li R*, Lu F*, Xiao Z*, Wang H*. Single-nucleus multi-omic profiling of human placental syncytiotrophoblasts identifies cellular trajectories during pregnancy. <b>Nat Genet</b> (2024) 56, 294-305. (Article)
+    </p>
+    <img src="image/cover-picture-ng-2024.Feb.jpg" alt="NG-2024-Wang.png" width="153" height="203" style="float:left;margin-bottom: 0px;">
+    <p style="font-size:small;text-align: justify;"> <b>Syncytiotrophoblast (STB) differentiation study.</b> <br> Abstract: The human placenta has a vital role in ensuring a successful pregnancy. Despite the growing body of knowledge about its cellular compositions and functions, 
+        there has been limited research on the heterogeneity of the billions of nuclei within the syncytiotrophoblast (STB), a multinucleated entity primarily 
+        responsible for placental function. Here we conducted integrated single-nucleus RNA sequencing and single-nucleus ATAC sequencing analyses of human placentas 
+        from early and late pregnancy. Our findings demonstrate the dynamic heterogeneity and developmental trajectories of STB nuclei and their correspondence with human 
+        trophoblast stem cell (hTSC)-derived STB. Furthermore, we identified transcription factors associated with diverse STB nuclear lineages through their gene regulatory 
+        networks and experimentally confirmed their function in hTSC and trophoblast organoid-derived STBs. Together, our data provide insights into the heterogeneity of human 
+        STB and represent a valuable resource for interpreting associated pregnancy complications.
+        <br>
+        <a href="https://www.nature.com/articles/s41588-023-01647-w"> PMID: 3826760 </a>
+    </p>
+
+
+    <br>
+    <br>
+
+
+    <p class="auto-width-paragraph">
+        2. Quan Y#, <b>Wang M#</b>, Xu C, Wang X, Qin D, Lin Y, Lu X, Lu F*, Li L*. Cnot8 eliminates naive regulation networks and is essential for naive-to-formative pluripotency transition. <b>Nucleic Acids Res</b> (2022) 50(8):4414-4435.
+    </p>
+
+    <img src="image/cover-picture-nar-2022.jpg" alt="NAR-2022-Quan-Wang.png" width="153" height="203" style="float:left;margin-bottom: 0px;"> 
+    <p style="font-size:small;text-align: justify;"> <b>Cnot8 driven embryonic pluripotency transition.</b> <br> Abstract: Mammalian early epiblasts at different phases are characterized by naïve, formative, and primed pluripotency states, involving extensive transcriptome changes. 
+        Here, we report that deadenylase Cnot8 of Ccr4-Not complex plays essential roles during the transition from naïve to formative state. 
+        Knock out (KO) Cnot8 resulted in early embryonic lethality in mice, but Cnot8 KO embryonic stem cells (ESCs) could be established. 
+        Compared with the cells differentiated from normal ESCs, Cnot8 KO cells highly expressed a great many genes during their differentiation into the formative state, 
+        including several hundred naïve-like genes enriched in lipid metabolic process and gene expression regulation that may form the naïve regulation networks. 
+        Knockdown expression of the selected genes of naïve regulation networks partially rescued the differentiation defects of Cnot8 KO ESCs. Cnot8 depletion led to 
+        the deadenylation defects of its targets, increasing their poly(A) tail lengths and half-life, eventually elevating their expression levels. We further found that 
+        Cnot8 was involved in the clearance of targets through its deadenylase activity and the binding of Ccr4-Not complex, as well as the interacting with Tob1 and Pabpc1. 
+        Our results suggest that Cnot8 eliminates naïve regulation networks through mRNA clearance, and is essential for naïve-to-formative pluripotency transition.
+        <br>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/35390160/">PMID: 35390160 </a> 
+    </p>
+
+
+    <p class="auto-width-paragraph"> 
+        3. <b>Wang M#</b>, Zhang Y#, Lin ZS*, Ye XG, Yuan YP, Ma W, Xin ZY*. Development of EST-PCR markers for Thinopyrum intermedium chromosome 2Ai#2 and their application in characterization of novel wheat-grass recombinants. <b>Theor Appl Genet</b> (2010) 121(7): 1369-1380.
+    </p>
+    <img src="image/cover-picture-tag-2010.jpg" alt="TAG-2010-Wang" width="153" height="203" style="float:left;margin-bottom: 0px;">
+    <p style="font-size:small;text-align: justify;"> A comparative genomics study in earlier year. 
+        <br>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/20585749/"> PMID: 20585749 </a>
+    </p>
+    
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   
+
+<!--
+    <div class="row">
+
+        <div class="column" style="background-color:white;border: .1px solid grey">
+            <h2>Syncytiotrophoblast (STB) differentiation</h2>
+            <a target="_blank" href="https://www.nature.com/articles/s41588-023-01647-w">
+                <img src="NG-2024-Wang.png" alt="NG-2024-Wang.png" width="300" height="350">
+            </a>
+            <div class="desc"> <b>Wang et.al, </b> Single-nucleus multi-omic profiling of human placental syncytiotrophoblasts
+                identifies cellular trajectories during pregnancy. Nature Genetics (2024)
+            </div>
+            <div class="desc"> <a href="https://www.nature.com/articles/s41588-023-01647-w"> PMID: 3826760 </a> </div>
+
+        </div>
+    
+        <div class="column" style="background-color:white;border: .1px solid grey;">
+            <h2>Cnot8 driven pluripotency transition <br> <br> </h2>
+            <a target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/35390160/">
+                <img src="NAR-2022-Quan-Wang.png" alt="NAR-2022-Quan-Wang" width="300" height="350">
+            </a>
+            <div class="desc">Quan and <strong>Wang et. al,</strong> Cnot8 eliminates naive regulation networks and is essential for naive-to-formative pluripotency transition. Nucleic Acid Res. (2022) </div>
+            <div class="desc"> <a href="https://pubmed.ncbi.nlm.nih.gov/35390160/"> PMID: 35390160 </a> </div>
+
+        </div>
+
+        <div class="column" style="background-color:white;border: .1px solid grey">
+            <h2>Comparative genomics <br> <br></h2>
+            <a target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/20585749">
+                <img src="TAG-2010-Wang.png" alt="TAG-2010-Wang" width="300" height="350">
+            </a>
+            <div class="desc"><strong>Wang et.al, </strong>Development of EST-PCR markers for <i>Th. intermedium </i> chromosome 2Ai#2 and their application in characterization of novel wheat-grass recombinants.Theor Appl Genet (2010)  </div>
+            <div class="desc"> <a href="https://pubmed.ncbi.nlm.nih.gov/20585749/"> PMID: 20585749 </a> </div>
+        </div>
+    
+    </div>
+
+    <hr>
+
+ -->
+    
+    <h2 id="contributed_pub"> <u>Contributed publications</u></h2>
+
+    <p class="auto-width-paragraph"> 
+        4. Wang Y#, Wu H#, Jiang X#, Jia L#, <b>Wang M</b>, Rong Y, Chen S, Wang Y, Xiao Z*, Liang X*, Wang H*. LMNA Determines Nuclear Morphology During Syncytialization of Human Trophoblast Stem Cells. <b>Front Cell Dev Biol.</b> (2022) 10:836390.
+    </p>
+
+    <p class="auto-width-paragraph">
+        5. Jiang X#, Zhai J#, Xiao Z#, Wu X#, Zhang D#, Wan H, Xu Y, Qi L, <b>Wang M</b>, Yu D, Liu Y, Wu H, Sun R, Xia S, Yu K, Guo J, Wang H*. Identifying a dynamic transcriptomic landscape of the <i>cynomolgus macaque</i> placenta spanning during pregnancy at single-cell resolution. <b>Dev Cell.</b> (2023) 58:806-821.
+    </p>
+
+    <p class="auto-width-paragraph">
+        6. Wu X#, Zhao W, Wu H, Zhang Q, Wang Y, Yu K, Zhai J, Mo F, <b>Wang M</b>, Li S, Zhu X, Liang X, Hu B, Liu G, Wu J, Wang H, Guo F, Yu L. An aggregation of human embryonic and trophoblast stem cells reveals the role of trophectoderm on epiblast differentiation. <b>Cell Prolif.</b> (2023) 56, e13492.
+    </p>  
+
+    <p class="auto-width-paragraph">
+        7. Chen J, Huang Q, Gao D, Wang J, Lang Y, Liu T, Li B, Bai Z, Luis Goicoechea J, Liang C .. <b>Wang M</b>, .. Wing RA, Chen M. Whole-genome sequencing of <i>Oryza brachyantha</i> reveals mechanisms underlying <i>Oryza</i> genome evolution. <b>Nature communications</b> (2013) 4: 1595.
+    </p>
+
+    <p class="auto-width-paragraph">
+        8. Bai Z, Chen J, Liao Y, <b>Wang M</b>, Liu R, Ge S, Wing RA, Chen M. The impact and origin of copy number variations in the <i>Oryza</i> species. <b>BMC genomics</b> (2016)17: 261.
+    </p>
+
+    <p class="auto-width-paragraph">
+        9. Wei G, Tian P, Zhang F, Qin H, Miao H, Chen Q, Hu Z, Cao L,<b>Wang M</b>, Gu X et al. Integrative Analyses of Nontargeted Volatile Profiling and Transcriptome Data Provide Molecular Insight into VOC Diversity in Cucumber Plants (<i>Cucumis sativus</i>). <b>Plant physiology</b> (2016) 172(1): 603-618.
+    </p>
+
+    <p class="auto-width-paragraph">
+        10. Liao Y, Zhang X, Li B, Liu T, Chen J, Bai Z, <b>Wang M</b>, Shi J, Walling JG, Wing RA et al. Comparison of <i>Oryza sativa</i> and <i>Oryza brachyantha</i> Genomes Reveals Selection-Driven Gene Escape from the Centromeric Regions. <b>The Plant cell</b> (2018) 30(8): 1729-1744.
+    </p>
+
+    <p class="auto-width-paragraph">
+        11. Tian P, Zhang X, Xia R, Liu Y, <b>Wang M</b>, Li B, Liu T, Shi J, Wing R, Meyers B, Chen M. Evolution and diversification of reproductive phased small interfering RNAs in <i>Oryz</i>a species. <b>NEW PHYTOLOGIST</b> (2021) 229(5): 2970-2983
+    </p>
+
+    <p class="auto-width-paragraph">
+        12. <b>Wang M#</b>, Zou H#, Lin Z, Wu Y, Chen X, Yuan Y. Expressed sequence tag-PCR markers for identification of alien barley chromosome 2H in wheat. <b>Genetics and molecular research</b> (2012) 11(3): 3452-3463.
+    </p>
+
+
+
+    <h2 id="aboutme"><u>About me</u></h2>
+
+    <p> A critical cooker.  </p>
+    
+
+<script>
+
+    let slideIndex = 1;
+    <!-- showSlides(slideIndex); -->
+    showSlides_dynamic(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+    }
+
+    function showSlides_dynamic() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides_dynamic, 3000); // Change image every 3 seconds
+      }
+      
+
+</script>
+
+
+
+<footer>
+        
+    <ul>
+        <li><a href="mailto:wangmeijiao@ioz.ac.cn">Email</a></li>
+        <li><a href="https://github.com/wangmeijiao">Github</a></li>
+    </ul>
+</footer>
+
+
+
+</body>
+
+
+
+
 </html>
